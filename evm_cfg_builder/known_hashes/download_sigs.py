@@ -27,19 +27,27 @@ def get_results(url: str, num_parsed: int) -> Tuple[str, int]:
     for result in results:
         hex_sig = result["hex_signature"]
         text_sig = result["text_signature"]
-        # If a key already exists, do not overwrite it. This helps cover the corner
-        # case of a hash collision. An example of this is
-        # owner() and ideal_warn_timed(uint256,uint128)
-        if int(hex_sig, 16) not in known_hashes.known_hashes:
-            # hex_sig is a 'str', parse it into an 'int'
-            known_hashes.known_hashes[int(hex_sig, 16)] = text_sig
+        
+        # normalize key into integer
+        key = int(hex_sig, 16)
 
-        cur_parsed += 1
+        # If this key is not present, add a new list with the text signature
+        if key not in known_hashes.known_hashes:
+            known_hashes.known_hashes[key] = {text_sig}
+            cur_parsed += 1
+        else:
+            # If this text signature is new, add it
+            before_count = len(known_hashes.known_hashes[key])
+            known_hashes.known_hashes[key].add(text_sig)
+            # Only increment if we actually added something new
+            if len(known_hashes.known_hashes[key]) > before_count:
+                cur_parsed += 1
 
     num_parsed += cur_parsed
-    # Display a status update
-    percentage_comp = num_parsed / json_data["count"] * 100
-    print(f"Parsed {num_parsed}/{json_data['count']} results ({percentage_comp:.2f}%)")
+    # Display a status update (guard against missing 'count')
+    total_count = json_data.get("count")
+    percentage_comp = (num_parsed / total_count * 100) if total_count else 0
+    print(f"Parsed {num_parsed}/{total_count if total_count is not None else '?'} results ({percentage_comp:.2f}%)")
 
     return next_url, cur_parsed
 
@@ -68,23 +76,24 @@ def sort_dict(unsorted_dict: Dict) -> Dict:
 def save_results() -> None:
     """
     Write the dict to the known_hashes.py file
-    We write the key and value as shown below to maintain the current format
-    of the key being an int - displayed as hex (4 bytes).
+    We write the key and value so the file contains a literal Python dict where
+    each value is a list of text signatures (even if there's only one).
     """
     sorted_dict = sort_dict(known_hashes.known_hashes)
     with open("known_hashes.py", "w", encoding="utf-8") as f:
         f.write("known_hashes = {\n")
         for k, v in sorted_dict.items():
-            # format the key as so
-            # pad the output with 0's (#0)
-            # pad the output to 10 char's (10)
-            # format into hex representation (x)
-            f.write(f"  {k:#010x}: '{v}',\n")
+            v_list = list(v) if isinstance(v, set) else v
+            f.write(f"  {k:#010x}: {v_list!r},\n")
         f.write("}\n")
 
     print("Saved results!")
 
 
 if __name__ == "__main__":
+
+    # Ensure we start fresh each run to avoid stale/sticky data from previous executions
+    known_hashes.known_hashes = {}
+
     iterate_paginated_results("https://www.4byte.directory/api/v1/signatures/")
     save_results()
