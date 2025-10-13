@@ -1,4 +1,5 @@
 *dot
 *sw*
 *.pyc
+**/.DS_Store
 __pycache__
