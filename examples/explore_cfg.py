@@ -1,16 +1,3 @@
-import sys
-from evm_cfg_builder.cfg.cfg import CFG
-
-if len(sys.argv) != 2:
-    print("Usage python explore_cfg.py contract.evm")
-    sys.exit(-1)
-
-with open(sys.argv[1], encoding="utf-8") as f:
-    runtime_bytecode = f.read()
-
-cfg = CFG(runtime_bytecode)
-
-for basic_block in cfg.basic_blocks:
-    print(
-        f"{basic_block} -> {sorted(basic_block.all_outgoing_basic_blocks, key=lambda x:x.start.pc)}"
-    )
+version https://git-lfs.github.com/spec/v1
+oid sha256:57de383fb627d2c256f2edc12efb7e6249550ec6ab20ff1088fa2554c126deee
+size 411
