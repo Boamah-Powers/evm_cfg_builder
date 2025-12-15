@@ -2,4 +2,5 @@
 *sw*
 *.pyc
 **/.DS_Store
+**/*.egg-info
 __pycache__

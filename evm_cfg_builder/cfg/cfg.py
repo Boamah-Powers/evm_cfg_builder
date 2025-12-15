@@ -62,6 +62,7 @@ class CFG:
     def __init__(
         self,
         bytecode: Optional[Union[str, bytes]] = None,
+        source_text_sigs: Optional[List[str]] = None,
         remove_metadata: bool = True,
         analyze: bool = True,
         optimization_enabled: bool = True,
@@ -71,6 +72,8 @@ class CFG:
 
         :param bytecode: The EVM bytecode
         :type bytecode: None, str, bytes
+        :param source_text_sigs: The source text signatures
+        :type source_text_sigs: List[str]
         :param remove_metadata: Automatically remove metadata
         :type remove_metadata: bool
         :param analyze: Automatically analyze the bytecode
@@ -89,6 +92,7 @@ class CFG:
         assert isinstance(bytecode, (type(None), str, bytes))
 
         self._bytecode = convert_bytecode(bytecode)
+        self._source_text_sigs = source_text_sigs
 
         if remove_metadata:
             self.remove_metadata()
@@ -181,8 +185,34 @@ class CFG:
         self.add_function(Function(Function.DISPATCHER_ID, 0, self._basic_blocks[0], self))
 
         for function in self.functions:
+            # Skip the dispatcher pseudo-function
+            if function.hash_id == Function.DISPATCHER_ID:
+                continue
+
+            # If we have known mappings for this hash
             if function.hash_id in known_hashes:
-                function.name = known_hashes[function.hash_id]
+                possible_sigs = known_hashes[function.hash_id]
+
+                # Normalize possible_sigs in case known_hashes uses a set
+                if isinstance(possible_sigs, (set, tuple)):
+                    possible_sigs = list(possible_sigs)
+
+                # If the user provided the Solidity source signatures, check for overlap
+                if self._source_text_sigs:
+                    # Look for exact match with any of the provided source signatures
+                    matches = [sig for sig in possible_sigs if sig in self._source_text_sigs]
+                    if matches:
+                        # Prefer the first matching signature
+                        function.name = matches[0]
+                    else:
+                        # No match in source, fallback to first known signature
+                        function.name = possible_sigs[0]
+                else:
+                    # No source provided, default to first known signature
+                    function.name = possible_sigs[0]
+            else:
+                # Unknown hash
+                function.name = f"unknown_{function.hash_id:08x}"
 
     def create_cfgs(self) -> None:
         """

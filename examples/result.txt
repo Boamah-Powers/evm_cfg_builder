@@ -1,0 +1,1787 @@
+Function _dispatcher
+
+	Basic Blocks:
+	- @0x0-0xc
+		Instructions:
+		- PUSH1
+		- PUSH1
+		- MSTORE
+		- PUSH1
+		- CALLDATASIZE
+		- LT
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xd-0x40>
+		- <cfg BasicBlock@0xaf-0xb3>
+	- @0xd-0x40
+		Instructions:
+		- PUSH1
+		- CALLDATALOAD
+		- PUSH29
+		- SWAP1
+		- DIV
+		- PUSH4
+		- AND
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x0-0xc>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x41-0x4b>
+		- <cfg BasicBlock@0xb4-0xbb>
+	- @0x41-0x4b
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0xd-0x40>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x4c-0x56>
+		- <cfg BasicBlock@0x144-0x14b>
+	- @0x4c-0x56
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x41-0x4b>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x57-0x61>
+		- <cfg BasicBlock@0x1a9-0x1b0>
+	- @0x57-0x61
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x4c-0x56>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x62-0x6c>
+		- <cfg BasicBlock@0x1d4-0x1db>
+	- @0x62-0x6c
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x57-0x61>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x6d-0x77>
+		- <cfg BasicBlock@0x259-0x260>
+	- @0x6d-0x77
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x62-0x6c>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x78-0x82>
+		- <cfg BasicBlock@0x2b0-0x2b7>
+	- @0x78-0x82
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x6d-0x77>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x83-0x8d>
+		- <cfg BasicBlock@0x2e1-0x2e8>
+	- @0x83-0x8d
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x78-0x82>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x8e-0x98>
+		- <cfg BasicBlock@0x358-0x35f>
+	- @0x8e-0x98
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x83-0x8d>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x99-0xa3>
+		- <cfg BasicBlock@0x3af-0x3b6>
+	- @0x99-0xa3
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x8e-0x98>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa4-0xae>
+		- <cfg BasicBlock@0x43f-0x446>
+	- @0xa4-0xae
+		Instructions:
+		- DUP1
+		- PUSH4
+		- EQ
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x99-0xa3>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xaf-0xb3>
+		- <cfg BasicBlock@0x4a4-0x4ab>
+Function unknown_-0000001
+	Attributes:
+		-payable
+		-view
+		-pure
+
+	Basic Blocks:
+	- @0xaf-0xb3
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0xa4-0xae>
+		Outgoing basic_block:
+Function message_hour(uint256,int8,uint16,bytes32)
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0xb4-0xbb
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xbc-0xbf>
+		- <cfg BasicBlock@0xc0-0xc8>
+	- @0xbc-0xbf
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0xb4-0xbb>
+		Outgoing basic_block:
+	- @0xc0-0xc8
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0xb4-0xbb>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x51b-0x56a>
+	- @0x51b-0x56a
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- DUP1
+		- SLOAD
+		- PUSH1
+		- DUP2
+		- PUSH1
+		- AND
+		- ISZERO
+		- PUSH2
+		- MUL
+		- SUB
+		- AND
+		- PUSH1
+		- SWAP1
+		- DIV
+		- DUP1
+		- PUSH1
+		- ADD
+		- PUSH1
+		- DUP1
+		- SWAP2
+		- DIV
+		- MUL
+		- PUSH1
+		- ADD
+		- PUSH1
+		- MLOAD
+		- SWAP1
+		- DUP2
+		- ADD
+		- PUSH1
+		- MSTORE
+		- DUP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP2
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- DUP3
+		- DUP1
+		- SLOAD
+		- PUSH1
+		- DUP2
+		- PUSH1
+		- AND
+		- ISZERO
+		- PUSH2
+		- MUL
+		- SUB
+		- AND
+		- PUSH1
+		- SWAP1
+		- DIV
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0xc0-0xc8>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x56b-0x572>
+		- <cfg BasicBlock@0x5b1-0x5b8>
+	- @0x56b-0x572
+		Instructions:
+		- DUP1
+		- PUSH1
+		- LT
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x51b-0x56a>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x573-0x585>
+		- <cfg BasicBlock@0x586-0x593>
+	- @0x573-0x585
+		Instructions:
+		- PUSH2
+		- DUP1
+		- DUP4
+		- SLOAD
+		- DIV
+		- MUL
+		- DUP4
+		- MSTORE
+		- SWAP2
+		- PUSH1
+		- ADD
+		- SWAP2
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x56b-0x572>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x5b1-0x5b8>
+	- @0x586-0x593
+		Instructions:
+		- JUMPDEST
+		- DUP3
+		- ADD
+		- SWAP2
+		- SWAP1
+		- PUSH1
+		- MSTORE
+		- PUSH1
+		- PUSH1
+		- SHA3
+		- SWAP1
+		Incoming basic_block:
+		- <cfg BasicBlock@0x56b-0x572>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x594-0x5a7>
+	- @0x594-0x5a7
+		Instructions:
+		- JUMPDEST
+		- DUP2
+		- SLOAD
+		- DUP2
+		- MSTORE
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- PUSH1
+		- ADD
+		- DUP1
+		- DUP4
+		- GT
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x586-0x593>
+		- <cfg BasicBlock@0x594-0x5a7>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x594-0x5a7>
+		- <cfg BasicBlock@0x5a8-0x5b0>
+	- @0x5a8-0x5b0
+		Instructions:
+		- DUP3
+		- SWAP1
+		- SUB
+		- PUSH1
+		- AND
+		- DUP3
+		- ADD
+		- SWAP2
+		Incoming basic_block:
+		- <cfg BasicBlock@0x594-0x5a7>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x5b1-0x5b8>
+	- @0x5b1-0x5b8
+		Instructions:
+		- JUMPDEST
+		- POP
+		- POP
+		- POP
+		- POP
+		- POP
+		- DUP2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x51b-0x56a>
+		- <cfg BasicBlock@0x573-0x585>
+		- <cfg BasicBlock@0x5a8-0x5b0>
+		Outgoing basic_block:
+Function approve(address,uint256)
+
+	Basic Blocks:
+	- @0x144-0x14b
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x14c-0x14f>
+		- <cfg BasicBlock@0x150-0x18e>
+	- @0x14c-0x14f
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x144-0x14b>
+		Outgoing basic_block:
+	- @0x150-0x18e
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH1
+		- DUP1
+		- CALLDATASIZE
+		- SUB
+		- DUP2
+		- ADD
+		- SWAP1
+		- DUP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP1
+		- CALLDATALOAD
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- POP
+		- POP
+		- POP
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x144-0x14b>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x5b9-0x6aa>
+	- @0x5b9-0x6aa
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- DUP2
+		- PUSH1
+		- PUSH1
+		- CALLER
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- DUP6
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- DUP2
+		- SWAP1
+		- SSTORE
+		- POP
+		- DUP3
+		- PUSH20
+		- AND
+		- CALLER
+		- PUSH20
+		- AND
+		- PUSH32
+		- DUP5
+		- PUSH1
+		- MLOAD
+		- DUP1
+		- DUP3
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP2
+		- POP
+		- POP
+		- PUSH1
+		- MLOAD
+		- DUP1
+		- SWAP2
+		- SUB
+		- SWAP1
+		- LOG3
+		- PUSH1
+		- SWAP1
+		- POP
+		- SWAP3
+		- SWAP2
+		- POP
+		- POP
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x150-0x18e>
+		Outgoing basic_block:
+Function totalSupply()
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0x1a9-0x1b0
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x1b1-0x1b4>
+		- <cfg BasicBlock@0x1b5-0x1bd>
+	- @0x1b1-0x1b4
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x1a9-0x1b0>
+		Outgoing basic_block:
+	- @0x1b5-0x1bd
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x1a9-0x1b0>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x6ab-0x6b0>
+	- @0x6ab-0x6b0
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- SLOAD
+		- DUP2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x1b5-0x1bd>
+		Outgoing basic_block:
+Function transferFrom(address,address,uint256)
+
+	Basic Blocks:
+	- @0x1d4-0x1db
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x1dc-0x1df>
+		- <cfg BasicBlock@0x1e0-0x23e>
+	- @0x1dc-0x1df
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x1d4-0x1db>
+		Outgoing basic_block:
+	- @0x1e0-0x23e
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH1
+		- DUP1
+		- CALLDATASIZE
+		- SUB
+		- DUP2
+		- ADD
+		- SWAP1
+		- DUP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP1
+		- CALLDATALOAD
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- POP
+		- POP
+		- POP
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x1d4-0x1db>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x6b1-0x77c>
+	- @0x6b1-0x77c
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- DUP1
+		- PUSH1
+		- PUSH1
+		- DUP7
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- CALLER
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- SLOAD
+		- SWAP1
+		- POP
+		- DUP3
+		- PUSH1
+		- PUSH1
+		- DUP8
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- SLOAD
+		- LT
+		- ISZERO
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x1e0-0x23e>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x77d-0x781>
+		- <cfg BasicBlock@0x782-0x788>
+	- @0x77d-0x781
+		Instructions:
+		- POP
+		- DUP3
+		- DUP2
+		- LT
+		- ISZERO
+		Incoming basic_block:
+		- <cfg BasicBlock@0x6b1-0x77c>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x782-0x788>
+	- @0x782-0x788
+		Instructions:
+		- JUMPDEST
+		- ISZERO
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x6b1-0x77c>
+		- <cfg BasicBlock@0x77d-0x781>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x789-0x78c>
+		- <cfg BasicBlock@0x78d-0x84f>
+	- @0x789-0x78c
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x782-0x788>
+		Outgoing basic_block:
+	- @0x78d-0x84f
+		Instructions:
+		- JUMPDEST
+		- DUP3
+		- PUSH1
+		- PUSH1
+		- DUP7
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- DUP3
+		- DUP3
+		- SLOAD
+		- ADD
+		- SWAP3
+		- POP
+		- POP
+		- DUP2
+		- SWAP1
+		- SSTORE
+		- POP
+		- DUP3
+		- PUSH1
+		- PUSH1
+		- DUP8
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- DUP3
+		- DUP3
+		- SLOAD
+		- SUB
+		- SWAP3
+		- POP
+		- POP
+		- DUP2
+		- SWAP1
+		- SSTORE
+		- POP
+		- PUSH32
+		- DUP2
+		- LT
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x782-0x788>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x850-0x8d9>
+		- <cfg BasicBlock@0x8da-0x94a>
+	- @0x850-0x8d9
+		Instructions:
+		- DUP3
+		- PUSH1
+		- PUSH1
+		- DUP8
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- CALLER
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- DUP3
+		- DUP3
+		- SLOAD
+		- SUB
+		- SWAP3
+		- POP
+		- POP
+		- DUP2
+		- SWAP1
+		- SSTORE
+		- POP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x78d-0x84f>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x8da-0x94a>
+	- @0x8da-0x94a
+		Instructions:
+		- JUMPDEST
+		- DUP4
+		- PUSH20
+		- AND
+		- DUP6
+		- PUSH20
+		- AND
+		- PUSH32
+		- DUP6
+		- PUSH1
+		- MLOAD
+		- DUP1
+		- DUP3
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP2
+		- POP
+		- POP
+		- PUSH1
+		- MLOAD
+		- DUP1
+		- SWAP2
+		- SUB
+		- SWAP1
+		- LOG3
+		- PUSH1
+		- SWAP2
+		- POP
+		- POP
+		- SWAP4
+		- SWAP3
+		- POP
+		- POP
+		- POP
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x78d-0x84f>
+		- <cfg BasicBlock@0x850-0x8d9>
+		Outgoing basic_block:
+Function balances(address)
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0x259-0x260
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x261-0x264>
+		- <cfg BasicBlock@0x265-0x299>
+	- @0x261-0x264
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x259-0x260>
+		Outgoing basic_block:
+	- @0x265-0x299
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH1
+		- DUP1
+		- CALLDATASIZE
+		- SUB
+		- DUP2
+		- ADD
+		- SWAP1
+		- DUP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- POP
+		- POP
+		- POP
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x259-0x260>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x94b-0x962>
+	- @0x94b-0x962
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- PUSH1
+		- MSTORE
+		- DUP1
+		- PUSH1
+		- MSTORE
+		- PUSH1
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- SWAP2
+		- POP
+		- SWAP1
+		- POP
+		- SLOAD
+		- DUP2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x265-0x299>
+		Outgoing basic_block:
+Function watch_tg_invmru_5c94e13(bool)
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0x2b0-0x2b7
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x2b8-0x2bb>
+		- <cfg BasicBlock@0x2bc-0x2c4>
+	- @0x2b8-0x2bb
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x2b0-0x2b7>
+		Outgoing basic_block:
+	- @0x2bc-0x2c4
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x2b0-0x2b7>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x963-0x975>
+	- @0x963-0x975
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- PUSH1
+		- SWAP1
+		- SLOAD
+		- SWAP1
+		- PUSH2
+		- EXP
+		- SWAP1
+		- DIV
+		- PUSH1
+		- AND
+		- DUP2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x2bc-0x2c4>
+		Outgoing basic_block:
+Function allowed(address,address)
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0x2e1-0x2e8
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x2e9-0x2ec>
+		- <cfg BasicBlock@0x2ed-0x341>
+	- @0x2e9-0x2ec
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x2e1-0x2e8>
+		Outgoing basic_block:
+	- @0x2ed-0x341
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH1
+		- DUP1
+		- CALLDATASIZE
+		- SUB
+		- DUP2
+		- ADD
+		- SWAP1
+		- DUP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- POP
+		- POP
+		- POP
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x2e1-0x2e8>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x976-0x99a>
+	- @0x976-0x99a
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- PUSH1
+		- MSTORE
+		- DUP2
+		- PUSH1
+		- MSTORE
+		- PUSH1
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- MSTORE
+		- DUP1
+		- PUSH1
+		- MSTORE
+		- PUSH1
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- SWAP2
+		- POP
+		- SWAP2
+		- POP
+		- POP
+		- SLOAD
+		- DUP2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x2ed-0x341>
+		Outgoing basic_block:
+Function balanceOf(address)
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0x358-0x35f
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x360-0x363>
+		- <cfg BasicBlock@0x364-0x398>
+	- @0x360-0x363
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x358-0x35f>
+		Outgoing basic_block:
+	- @0x364-0x398
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH1
+		- DUP1
+		- CALLDATASIZE
+		- SUB
+		- DUP2
+		- ADD
+		- SWAP1
+		- DUP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- POP
+		- POP
+		- POP
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x358-0x35f>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x99b-0x9e3>
+	- @0x99b-0x9e3
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- PUSH1
+		- PUSH1
+		- DUP4
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- SLOAD
+		- SWAP1
+		- POP
+		- SWAP2
+		- SWAP1
+		- POP
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x364-0x398>
+		Outgoing basic_block:
+Function watch_tg_invmru_4f9dd3f(address,uint256)
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0x3af-0x3b6
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x3b7-0x3ba>
+		- <cfg BasicBlock@0x3bb-0x3c3>
+	- @0x3b7-0x3ba
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x3af-0x3b6>
+		Outgoing basic_block:
+	- @0x3bb-0x3c3
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x3af-0x3b6>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x9e4-0xa33>
+	- @0x9e4-0xa33
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- DUP1
+		- SLOAD
+		- PUSH1
+		- DUP2
+		- PUSH1
+		- AND
+		- ISZERO
+		- PUSH2
+		- MUL
+		- SUB
+		- AND
+		- PUSH1
+		- SWAP1
+		- DIV
+		- DUP1
+		- PUSH1
+		- ADD
+		- PUSH1
+		- DUP1
+		- SWAP2
+		- DIV
+		- MUL
+		- PUSH1
+		- ADD
+		- PUSH1
+		- MLOAD
+		- SWAP1
+		- DUP2
+		- ADD
+		- PUSH1
+		- MSTORE
+		- DUP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP2
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- DUP3
+		- DUP1
+		- SLOAD
+		- PUSH1
+		- DUP2
+		- PUSH1
+		- AND
+		- ISZERO
+		- PUSH2
+		- MUL
+		- SUB
+		- AND
+		- PUSH1
+		- SWAP1
+		- DIV
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x3bb-0x3c3>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa34-0xa3b>
+		- <cfg BasicBlock@0xa7a-0xa81>
+	- @0xa34-0xa3b
+		Instructions:
+		- DUP1
+		- PUSH1
+		- LT
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x9e4-0xa33>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa3c-0xa4e>
+		- <cfg BasicBlock@0xa4f-0xa5c>
+	- @0xa3c-0xa4e
+		Instructions:
+		- PUSH2
+		- DUP1
+		- DUP4
+		- SLOAD
+		- DIV
+		- MUL
+		- DUP4
+		- MSTORE
+		- SWAP2
+		- PUSH1
+		- ADD
+		- SWAP2
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0xa34-0xa3b>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa7a-0xa81>
+	- @0xa4f-0xa5c
+		Instructions:
+		- JUMPDEST
+		- DUP3
+		- ADD
+		- SWAP2
+		- SWAP1
+		- PUSH1
+		- MSTORE
+		- PUSH1
+		- PUSH1
+		- SHA3
+		- SWAP1
+		Incoming basic_block:
+		- <cfg BasicBlock@0xa34-0xa3b>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa5d-0xa70>
+	- @0xa5d-0xa70
+		Instructions:
+		- JUMPDEST
+		- DUP2
+		- SLOAD
+		- DUP2
+		- MSTORE
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- PUSH1
+		- ADD
+		- DUP1
+		- DUP4
+		- GT
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0xa4f-0xa5c>
+		- <cfg BasicBlock@0xa5d-0xa70>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa5d-0xa70>
+		- <cfg BasicBlock@0xa71-0xa79>
+	- @0xa71-0xa79
+		Instructions:
+		- DUP3
+		- SWAP1
+		- SUB
+		- PUSH1
+		- AND
+		- DUP3
+		- ADD
+		- SWAP2
+		Incoming basic_block:
+		- <cfg BasicBlock@0xa5d-0xa70>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa7a-0xa81>
+	- @0xa7a-0xa81
+		Instructions:
+		- JUMPDEST
+		- POP
+		- POP
+		- POP
+		- POP
+		- POP
+		- DUP2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x9e4-0xa33>
+		- <cfg BasicBlock@0xa3c-0xa4e>
+		- <cfg BasicBlock@0xa71-0xa79>
+		Outgoing basic_block:
+Function transfer(address,uint256)
+
+	Basic Blocks:
+	- @0x43f-0x446
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x447-0x44a>
+		- <cfg BasicBlock@0x44b-0x489>
+	- @0x447-0x44a
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x43f-0x446>
+		Outgoing basic_block:
+	- @0x44b-0x489
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH1
+		- DUP1
+		- CALLDATASIZE
+		- SUB
+		- DUP2
+		- ADD
+		- SWAP1
+		- DUP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP1
+		- CALLDATALOAD
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- POP
+		- POP
+		- POP
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x43f-0x446>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xa82-0xacd>
+	- @0xa82-0xacd
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- DUP2
+		- PUSH1
+		- PUSH1
+		- CALLER
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- SLOAD
+		- LT
+		- ISZERO
+		- ISZERO
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		- <cfg BasicBlock@0x44b-0x489>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xace-0xad1>
+		- <cfg BasicBlock@0xad2-0xbda>
+	- @0xace-0xad1
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0xa82-0xacd>
+		Outgoing basic_block:
+	- @0xad2-0xbda
+		Instructions:
+		- JUMPDEST
+		- DUP2
+		- PUSH1
+		- PUSH1
+		- CALLER
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- DUP3
+		- DUP3
+		- SLOAD
+		- SUB
+		- SWAP3
+		- POP
+		- POP
+		- DUP2
+		- SWAP1
+		- SSTORE
+		- POP
+		- DUP2
+		- PUSH1
+		- PUSH1
+		- DUP6
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- DUP3
+		- DUP3
+		- SLOAD
+		- ADD
+		- SWAP3
+		- POP
+		- POP
+		- DUP2
+		- SWAP1
+		- SSTORE
+		- POP
+		- DUP3
+		- PUSH20
+		- AND
+		- CALLER
+		- PUSH20
+		- AND
+		- PUSH32
+		- DUP5
+		- PUSH1
+		- MLOAD
+		- DUP1
+		- DUP3
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP2
+		- POP
+		- POP
+		- PUSH1
+		- MLOAD
+		- DUP1
+		- SWAP2
+		- SUB
+		- SWAP1
+		- LOG3
+		- PUSH1
+		- SWAP1
+		- POP
+		- SWAP3
+		- SWAP2
+		- POP
+		- POP
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0xa82-0xacd>
+		Outgoing basic_block:
+Function allowance(address,address)
+	Attributes:
+		-view
+
+	Basic Blocks:
+	- @0x4a4-0x4ab
+		Instructions:
+		- JUMPDEST
+		- CALLVALUE
+		- DUP1
+		- ISZERO
+		- PUSH2
+		- JUMPI
+		Incoming basic_block:
+		Outgoing basic_block:
+		- <cfg BasicBlock@0x4ac-0x4af>
+		- <cfg BasicBlock@0x4b0-0x504>
+	- @0x4ac-0x4af
+		Instructions:
+		- PUSH1
+		- DUP1
+		- REVERT
+		Incoming basic_block:
+		- <cfg BasicBlock@0x4a4-0x4ab>
+		Outgoing basic_block:
+	- @0x4b0-0x504
+		Instructions:
+		- JUMPDEST
+		- POP
+		- PUSH2
+		- PUSH1
+		- DUP1
+		- CALLDATASIZE
+		- SUB
+		- DUP2
+		- ADD
+		- SWAP1
+		- DUP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- DUP1
+		- CALLDATALOAD
+		- PUSH20
+		- AND
+		- SWAP1
+		- PUSH1
+		- ADD
+		- SWAP1
+		- SWAP3
+		- SWAP2
+		- SWAP1
+		- POP
+		- POP
+		- POP
+		- PUSH2
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x4a4-0x4ab>
+		Outgoing basic_block:
+		- <cfg BasicBlock@0xbdb-0xc61>
+	- @0xbdb-0xc61
+		Instructions:
+		- JUMPDEST
+		- PUSH1
+		- PUSH1
+		- PUSH1
+		- DUP5
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- PUSH1
+		- DUP4
+		- PUSH20
+		- AND
+		- PUSH20
+		- AND
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- SWAP1
+		- DUP2
+		- MSTORE
+		- PUSH1
+		- ADD
+		- PUSH1
+		- SHA3
+		- SLOAD
+		- SWAP1
+		- POP
+		- SWAP3
+		- SWAP2
+		- POP
+		- POP
+		- JUMP
+		Incoming basic_block:
+		- <cfg BasicBlock@0x4b0-0x504>
+		Outgoing basic_block:
